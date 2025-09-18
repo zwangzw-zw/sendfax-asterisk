@@ -236,5 +236,5 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-Sh
 
 - 📧 **Issues**: [GitHub Issues](https://github.com/zwangzw-zw/sendfax-asterisk/issues)
 - 📖 **Documentation**: [Wiki](https://github.com/zwangzw-zw/sendfax-asterisk/wiki)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/zwangzw-zw/sendfax-asterisk/discussions)
+
 

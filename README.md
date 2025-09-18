@@ -25,7 +25,7 @@ A comprehensive bash script for sending faxes through Asterisk with professional
 
 1. Download the script:
    ```bash
-   wget https://raw.githubusercontent.com/your-username/asterisk-sendfax/main/sendfax.sh
+  wget https://raw.githubusercontent.com/zwangzw-zw/sendfax-asterisk/main/sendfax.sh
    chmod +x sendfax.sh
    ```
 
@@ -285,9 +285,9 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-Sh
 
 ## Support
 
-- 📧 **Issues**: [GitHub Issues](https://github.com/your-username/asterisk-sendfax/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/your-username/asterisk-sendfax/wiki)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/your-username/asterisk-sendfax/discussions)
+- 📧 **Issues**: [GitHub Issues](https://github.com/zwangzw-zw/sendfax-asterisk/issues)
+- 📖 **Documentation**: [Wiki](https://github.com/zwangzw-zw/sendfax-asterisk/wiki)
+- 💬 **Discussions**: [GitHub Discussions](https://github.com/zwangzw-zw/sendfax-asterisk/discussions)
 
 ## Acknowledgments
 

@@ -24,10 +24,11 @@ A comprehensive bash script for sending faxes through Asterisk with professional
 ## Installation
 
 1. Download the script:
-   ```bash
+
+  ```sh
   wget https://raw.githubusercontent.com/zwangzw-zw/sendfax-asterisk/main/sendfax.sh
-   chmod +x sendfax.sh
-   ```
+  chmod +x sendfax.sh
+  ```
 
 2. Configure the script by editing the configuration section:
    ```bash

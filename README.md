@@ -189,13 +189,6 @@ Each page includes comprehensive headers:
 
 ### Common Issues
 
-#### "asterisk command not found"
-```bash
-# Add Asterisk to PATH or use full path
-export PATH=$PATH:/usr/sbin
-# or
-sudo ln -s /usr/sbin/asterisk /usr/local/bin/asterisk
-```
 
 #### "res_fax.so module not loaded"
 ```bash
@@ -206,36 +199,6 @@ asterisk -rx "module load res_fax.so"
 echo "load => res_fax.so" >> /etc/asterisk/modules.conf
 ```
 
-#### "Ghostscript not found"
-```bash
-# Ubuntu/Debian
-sudo apt-get install ghostscript
-
-# CentOS/RHEL
-sudo yum install ghostscript
-
-# macOS
-brew install ghostscript
-```
-
-#### "ImageMagick not found"
-```bash
-# Ubuntu/Debian
-sudo apt-get install imagemagick
-
-# CentOS/RHEL
-sudo yum install ImageMagick
-
-# macOS
-brew install imagemagick
-```
-
-### Debug Mode
-Add debugging to the script:
-```bash
-# Add after the shebang line
-set -x  # Enable debug output
-```
 
 ### Log Analysis
 ```bash
@@ -268,21 +231,6 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-Sh
 - ❌ Commercial use requires separate licensing
 - 🔗 Full license: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-## Changelog
-
-### Version 2.0.0
-- Added `--cover`/`--nocover` flags for coversheet control
-- Enhanced text processing with 85-character width
-- Expanded message capacity to 18 lines
-- Improved page numbering logic
-- Added comprehensive parameter validation
-- Enhanced error handling and status reporting
-
-### Version 1.0.0
-- Initial release with basic fax transmission
-- Professional coversheet generation
-- Multi-page document support
-- Header generation with sender/recipient info
 
 ## Support
 

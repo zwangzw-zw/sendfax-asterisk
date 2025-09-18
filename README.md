@@ -290,8 +290,3 @@ This project is licensed under the Creative Commons Attribution-NonCommercial-Sh
 - 📖 **Documentation**: [Wiki](https://github.com/zwangzw-zw/sendfax-asterisk/wiki)
 - 💬 **Discussions**: [GitHub Discussions](https://github.com/zwangzw-zw/sendfax-asterisk/discussions)
 
-## Acknowledgments
-
-- Asterisk community for excellent documentation
-- Ghostscript team for reliable PDF/PostScript processing
-- ImageMagick developers for image manipulation capabilities

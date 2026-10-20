@@ -56,12 +56,13 @@ Tested with Asterisk 22, Ghostscript 10, and ImageMagick 7 on Debian 13.
    sudo ./sendfax.sh 5551234567 document.pdf
    ```
 
-   Alternatively, grant your user write access with ACLs and run it directly:
-
-   ```bash
-   sudo setfacl -m u:$USER:rwx /var/spool/asterisk/tmp /var/spool/asterisk/outgoing
-   sudo setfacl -d -m u:$USER:rwx /var/spool/asterisk/tmp /var/spool/asterisk/outgoing
-   ```
+   The script also queries the Asterisk CLI to verify that the fax modules are
+   loaded. The control socket (`/var/run/asterisk/asterisk.ctl`) is root-only by
+   default, so `sudo` is the simplest option. To run unprivileged, grant write
+   access to the spool directories **and** make the control socket accessible to
+   your user (for example, via `astctlpermissions`/`astctlowner` in
+   `asterisk.conf` or a dedicated group). If the CLI is inaccessible, the script
+   reports an error rather than submitting a job blindly.
 
 ## Usage
 

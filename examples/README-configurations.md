@@ -287,10 +287,8 @@ The `--from` option takes precedence over the environment variable for that run.
 
 ## Permissions
 
-The script writes call files to the Asterisk spool. Run it with `sudo`, or grant
-your user access with ACLs:
-
-```bash
-sudo setfacl -m u:$USER:rwx /var/spool/asterisk/tmp /var/spool/asterisk/outgoing
-sudo setfacl -d -m u:$USER:rwx /var/spool/asterisk/tmp /var/spool/asterisk/outgoing
-```
+The script writes call files to the Asterisk spool and queries the Asterisk CLI
+to verify the fax modules. Run it with `sudo`, or grant your user write access
+to the spool directories **and** access to the Asterisk control socket
+(`/var/run/asterisk/asterisk.ctl`, root-only by default). Without CLI access the
+script reports an error instead of submitting a job blindly.

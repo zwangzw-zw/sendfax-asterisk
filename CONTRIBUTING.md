@@ -16,8 +16,8 @@ Thank you for your interest in contributing to this project! We welcome contribu
 1. Fork the repository on GitHub
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/your-username/asterisk-sendfax.git
-   cd asterisk-sendfax
+   git clone https://github.com/your-username/sendfax-asterisk.git
+   cd sendfax-asterisk
    ```
 3. Create a new branch for your feature or fix:
    ```bash

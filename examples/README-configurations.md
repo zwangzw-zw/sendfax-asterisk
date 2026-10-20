@@ -17,7 +17,7 @@ TRUNK_NAME="your-fax-provider"          # Name from pjsip.conf or sip.conf
 CALLERID="Your Company <+15551234567>"  # Your caller ID
 
 # Fax Options
-EXTRA_FAX_OPTS="df"    # d=ECM enabled, f=use V.17 fallback
+EXTRA_FAX_OPTS="df"    # d=FAX debug, f=audio fallback on T.38
 FAX_PRIORITY="Normal"  # Default priority: Normal, Urgent, High, Low
 
 # System Paths
@@ -71,7 +71,7 @@ trust_id_inbound=yes
 
 [pstn-aor]
 type=aor
-contact=sip:192.168.1.100:5060
+contact=sip:192.0.2.10:5060
 
 [pstn-auth]
 type=auth
@@ -158,7 +158,7 @@ EXTRA_FAX_OPTS="df"
 TECH="PJSIP" 
 TRUNK_NAME="ringcentral-fax"
 CALLERID="Company Name <+15551234567>"
-EXTRA_FAX_OPTS="d"  # ECM enabled
+EXTRA_FAX_OPTS="d"  # FAX debug
 
 # RingCentral typically requires G.711 codec only
 ```
@@ -233,7 +233,7 @@ SPOOL_DIR="/var/spool/asterisk/outgoing"
 TECH="PJSIP"
 TRUNK_NAME="international-gateway"  
 CALLERID="Global Business <+15551234567>"
-EXTRA_FAX_OPTS="d"  # ECM for reliability
+EXTRA_FAX_OPTS="d"  # FAX debug
 
 # International number format
 ./sendfax.sh "Hans Mueller <+49301234567>" document.pdf "Quarterly Report" "Q4 results attached"
@@ -271,3 +271,26 @@ timers_min_se=120
 ```
 
 For more specific configuration help, please refer to the main README.md or submit an issue with your particular setup details.
+## Sender Identity Overrides
+
+The sender identity can be set per transmission without editing the script:
+
+```bash
+# Command-line override
+./sendfax.sh --from "Billing Department <+15551234567>" 5551234567 invoice.pdf
+
+# Environment variable override
+CALLERID="Billing Department <+15551234567>" ./sendfax.sh 5551234567 invoice.pdf
+```
+
+The `--from` option takes precedence over the environment variable for that run.
+
+## Permissions
+
+The script writes call files to the Asterisk spool. Run it with `sudo`, or grant
+your user access with ACLs:
+
+```bash
+sudo setfacl -m u:$USER:rwx /var/spool/asterisk/tmp /var/spool/asterisk/outgoing
+sudo setfacl -d -m u:$USER:rwx /var/spool/asterisk/tmp /var/spool/asterisk/outgoing
+```

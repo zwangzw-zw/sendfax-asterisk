@@ -1,0 +1,29 @@
+# --- Asterisk SendFax configuration template --------------------------------
+# Copy the values below into the configuration section at the top of sendfax.sh.
+
+# Channel technology: PJSIP (recommended) or SIP (legacy)
+TECH="PJSIP"
+
+# SIP trunk or endpoint name from pjsip.conf / sip.conf
+TRUNK_NAME="your-trunk-name"
+
+# Sender identity. Can also be supplied with --from or the CALLERID
+# environment variable at run time.
+CALLERID="${CALLERID:-Your Name <+15551234567>}"
+
+# Options passed to Asterisk SendFAX():
+#   d = enable FAX debugging
+#   f = allow audio fallback on T.38-capable channels
+#   F = force audio mode on T.38-capable channels
+#   s = send progress Manager events
+#   z = initiate a T.38 reinvite if the remote end does not
+EXTRA_FAX_OPTS="df"
+
+# Default coversheet priority: Normal, Urgent, High, Low
+FAX_PRIORITY="Normal"
+
+# Asterisk spool directories. STAGE_DIR must be on the same filesystem as
+# SPOOL_DIR so the final move is an atomic rename.
+SPOOL_DIR="/var/spool/asterisk/outgoing"
+STAGE_DIR="/var/spool/asterisk/tmp"
+DONE_DIR="/var/spool/asterisk/outgoing_done"
